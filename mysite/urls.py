@@ -16,6 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls import include, url
+from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
+from blog import views
+
+admin.autodiscover()
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.testpage, name='home'),
 ]
